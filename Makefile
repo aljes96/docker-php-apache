@@ -10,18 +10,18 @@ XDEBUG_VERSION=2.9.8
 default: build
 
 build:
-	@docker build . -t aljes96/php-apache:$(PHP_VERSION) \
+	@docker build . -t aljes96/php-apache:$(PHP_VERSION)-wp-cli \
 		--build-arg PHP_VERSION=$(PHP_VERSION) \
 		--build-arg XDEBUG_VERSION=$(XDEBUG_VERSION) \
 		--force-rm
 
 push:
-	@docker push aljes96/php-apache:$(PHP_VERSION)
+	@docker push aljes96/php-apache:$(PHP_VERSION)-wp-cli
 
 debug:
-	@docker run --rm -it aljes96/php-apache:$(PHP_VERSION) /bin/bash
+	@docker run --rm -it aljes96/php-apache:$(PHP_VERSION)-wp-cli /bin/bash
 
 run:
-	@docker run --rm aljes96/php-apache:$(PHP_VERSION)
+	@docker run --rm aljes96/php-apache:$(PHP_VERSION)-wp-cli
 
 release: build push

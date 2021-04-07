@@ -59,3 +59,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN echo "ServerName localhost" > /etc/apache2/conf-available/ServerName.conf; \
     /usr/sbin/a2enconf ServerName; \
     /usr/sbin/a2enmod rewrite headers expires
+
+# Instalando e configurando o WP-CLI
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp

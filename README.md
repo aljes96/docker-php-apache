@@ -7,6 +7,10 @@ facilitar o desenvolvimento de projetos web em geral.
 ```console
 $ docker pull aljes96/php-apache:7.4.8
 ```
+Ou com WP-CLI
+```console
+$ docker pull aljes96/php-apache:7.4.8-wp-cli
+```
 ### Inicializa container de nome 'web-server'
 Executar uma imagem (criando um container)
 ```console
